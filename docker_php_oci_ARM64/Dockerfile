@@ -1,7 +1,7 @@
 FROM ubuntu:rolling
 
-LABEL maintainer="hoplin"
-LABEL email="jhoplin7259@gmail.com"
+LABEL maintainer="hoplin,bochankang"
+LABEL email="jhoplin7259@gmail.com,gillco00@naver.com"
 
 # Non Interactive set
 ARG DEBIAN_FRONTEND=noninteractive
@@ -35,7 +35,7 @@ RUN mkdir -p /usr/lib/oracle/client\
 && echo "ORACLE_HOME=/usr/lib/oracle/client/lib" >> /etc/profile\
 && ldconfig\
 && pecl channel-update pecl.php.net\
-&& echo 'instantclient,/usr/lib/oracle/client/lib/' | pecl install oci8\
+&& echo 'instantclient,/usr/lib/oracle/client/lib/' | pecl install oci8-3.2.0\
 && echo "extension=oci8.so" >> /etc/php/8.1/cli/php.ini\
 && cd /etc/php/8.1/mods-available && echo "extension=oci8.so" >> oci.ini\
 && cd /etc/php/8.1/apache2/conf.d && ln -s /etc/php/8.1/mods-available/oci.ini 20-oci.ini
@@ -48,7 +48,7 @@ RUN mkdir -p /usr/lib/oracle/client\
 # ln[34] : Enroll oracle home env variable
 # ln[35] : Update dynamic linker
 # ln[36] : Update PECL(PHP Extension Community Library)
-# ln[37] : Install oci8
+# ln[37] : Install oci8-3.2.0 (SEE clearly OCI version)
 # ln[38] : Enroll oci8 to php.ini
 # ln[39] : Add to mods-available
 # ln[40] : Make symbolic link about oci.ini
