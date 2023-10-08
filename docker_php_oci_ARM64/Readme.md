@@ -6,7 +6,7 @@ Docker : PHP - OCI 8
 - What will be installed
     - PHP 8.0
     - PHP Basic Extensions
-    - OCI8
+    - OCI8 (version 8-3.2.0)
     - Oracle Instant Client(Basic, SDK, ver. 19)
     - PHP Composer
     - PHP Laravel
@@ -24,7 +24,7 @@ Docker : PHP - OCI 8
 ***
 ## Warning
 - **This Docker Image is only available to ARM 64 CPU"**
-- **Apple Sillicon, Linux ARM Platform supported**
+- **Apple Sillicon(Verified M1, M2), Linux ARM Platform supported**
 - **This Docker Image support Oracle DB Connection**
 ***
 ## Run container
